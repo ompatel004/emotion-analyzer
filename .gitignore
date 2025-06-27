@@ -1,0 +1,15 @@
+# .gitignore
+
+# Dependencies
+/api/node_modules
+/frontend/node_modules
+
+# Build folder
+/frontend/build
+
+# Environment variables
+/api/.env
+
+# Misc
+.DS_Store
+npm-debug.log
