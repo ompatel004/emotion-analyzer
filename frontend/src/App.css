@@ -1,0 +1,179 @@
+/* frontend/src/App.css */
+
+/* --- General & Background --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+/* --- Typography --- */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+p {
+  color: #c7c7c7;
+  margin-top: 0;
+  max-width: 600px;
+}
+
+/* --- Input Form Card --- */
+.emotion-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 550px;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+textarea {
+  font-family: 'Poppins', monospace;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #555;
+  margin-bottom: 1rem;
+  resize: vertical;
+  min-height: 80px;
+  background-color: #333;
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.3);
+}
+
+button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #21a1f1;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* --- Result Card & Animation --- */
+.result-card {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  width: 90%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-card h2 {
+  margin-top: 0;
+  color: #ccc;
+  font-weight: 400;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+/* Find and replace this rule in App.css */
+
+.emotion-label {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #61dafb;
+  margin: 1rem 0;
+  text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+  
+  /* --- NEW styles for alignment --- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* This adds space between the emoji and the text */
+}
+
+.confidence-score {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 1rem;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ff6b6b;
+}
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .emotion-form, .result-card {
+    padding: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .emotion-label {
+    font-size: 2rem;
+  }
+}
